@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  dotnet-clojure:
+    build: ./dotnet-clojure
+    volumes:
+      - ./src:/src
+    working_dir: /src
+    command: tail -f /dev/null
+
+networks:
+  default:
