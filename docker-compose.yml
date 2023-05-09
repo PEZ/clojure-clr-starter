@@ -4,8 +4,10 @@ services:
   dotnet-clojure:
     build: ./dotnet-clojure
     volumes:
-      - ./src:/src
-    working_dir: /src
+      - .:/my_clojureclr_project
+    working_dir: /my_clojureclr_project
+    ports:
+      - "1667:1667"
     command: tail -f /dev/null
 
 networks:
