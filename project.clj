@@ -8,4 +8,4 @@
   :source-paths ["src"]
   :resource-paths ["resources"]
   :main pez.hello
-  :main-cmd ["Clojure.Main" "-e" "(require '[clojure.tools.nrepl]) (clojure.tools.nrepl/start-server!)"])
+  :profiles {:dev {:source-paths ["dev"]}})

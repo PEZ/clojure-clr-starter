@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   dotnet-clojure:
-    build: ./dotnet-clojure
+    build: ./docker
     volumes:
-      - .:/my_clojureclr_project
-    working_dir: /my_clojureclr_project
+      - .:/app
+    working_dir: /app
     ports:
-      - "1667:1667"
+      - "6667:1667"
     command: tail -f /dev/null
 
 networks:

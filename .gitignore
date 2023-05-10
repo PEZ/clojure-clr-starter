@@ -5,10 +5,10 @@ pom.xml
 pom.xml.asc
 *.jar
 *.class
-/.cpcache
+.cpcache
 /.lein-*
-/.nrepl-history
-/.nrepl-port
+.nrepl-history
+.nrepl-port
 words-alpha.txt
 .clj-kondo/.cache/
 .lsp/.cache/
@@ -16,3 +16,5 @@ words-alpha.txt
 .calva/output-window/
 .DS_Store
 .portal/
+/dependencies
+.nrepl-port
