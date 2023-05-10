@@ -54,15 +54,19 @@ It might look like this is a Leiningen project, but Leiningen is only used to do
 
 The `docker compose up` command will result in the creation of a directory `dependencies` in the root of the repository with the unpacked jar files for the dependencies identified and downloaded by Leiningen. And the directories there will be added to the load path.
 
-
 ## WIP
 
 I know almost nothing about .Net and actually have no clue what I am doing. Expect this project to change as I figure things out a bit.
 
 ClojureCLR is also work in progress as is the nrepl server we are using here.
 
+## License
+
+See [LICENSE.md](LICENSE.md) (TL;DR: 🗽)
+
 ## Happy Coding! ♥️
 
 Please don't hesitate to file issues and PRs to improve this example project.
 
 You find me in the `#clr` and `#calva` (and many other) channels on the [Clojurians Slack](http://clojurians.net/).
+
