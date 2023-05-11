@@ -26,7 +26,13 @@ This will create and start the Docker compostion consisting of one service named
 
 ## Start the REPL and Connect your editor
 
-If you are using [Calva](https://calva.io) you can now start the project REPL and connect it by using the **Jack-in** command: <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd> <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>j</kbd>.
+If you are using [Calva](https://calva.io) _and are not using Windows_, you can now start the project REPL and connect it with:
+
+1. Run the command **Calva: Start a Project REPL and Connect (a.k.a.Jack-in)**, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd> <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>j</kbd>
+2. Select the project root **clojure-clr-mini** (the *Workspace Root*)
+3. Select the project type/sequence: **ClojureCLR Starter**
+
+If you are using Calva _and Windows_: Start the REPL as per [below](#start-the-repl) and then do [Connect your editor](#connect-your-editor) using the above steps, replacing the first one with **Calva: Connect to a Running REPL in Your Project**.
 
 If you are using some other editor, please read on.
 

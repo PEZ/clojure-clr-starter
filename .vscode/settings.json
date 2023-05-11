@@ -4,10 +4,10 @@
             "name": "ClojureCLR Starter",
             "projectRootPath": ["."],
             "projectType": "Leiningen",
-            "customJackInCommandLine": "docker-compose exec -it dotnet-clojure /app/docker/start-repl.sh",
-            "autoSelectForJackIn": true,
-            "autoSelectForConnect": true,
-            "nReplPortFile": ["/app/docker/.nrepl-port"],
+            "customJackInCommandLine": "docker compose exec -it dotnet-clojure /app/docker/start-repl.sh",
+            //"autoSelectForJackIn": true,
+            //"autoSelectForConnect": true,
+            "nReplPortFile": ["docker", ".nrepl-port"],
             "menuSelections": {
                 "leinProfiles": [
                     "dev"
