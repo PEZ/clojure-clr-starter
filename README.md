@@ -26,10 +26,12 @@ This will create and start the Docker compostion consisting of one service named
 
 ## Start the REPL and Connect your Editor
 
-If you are using [Calva](https://calva.io), you can now start the project REPL and connect it with the command
-**Calva: Start a Project REPL and Connect (a.k.a.Jack-in)**, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd> <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>j</kbd>
+### If you are using [Calva](https://calva.io)
 
-The REPL will keep running in the docker container, and Calva will reconnect it automatically whenever you open the project.
+You can now start the project REPL and connect it with the command **Calva: Start a Project REPL and Connect (a.k.a.Jack-in)**, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd> <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>j</kbd>
+
+You can also choose to start the REPL manually (as per [below](#start-the-repl)) and use the command **Calva: Connect to a Running REPL in your Project**, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd> <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd>
+This has the benefit that the REPL will keep running in the docker container when you close the project, and Calva will reconnect it automatically whenever you open the project.
 
 If you are using some other editor, please read on.
 
@@ -72,9 +74,13 @@ The `docker compose up` command will result in the creation of a directory `depe
 
 ## WIP
 
-I know almost nothing about .Net and actually have not much clue what I am doing. Expect this project to change as I figure things out a bit.
+I know almost nothing about .Net and actually have not much clue what I am doing. Expect this project to change as I figure things out a bit. Please don't hesitate to file issues and PRs! 🙏
 
 ClojureCLR is also work in progress as is the nrepl server we are using here.
+
+## Quirks
+
+A known issue is that the `docker/.nrepl-port` file is not deleted when the Docker container is killed. I don't know why, yet. Delete it manually, until the issue has been solved.
 
 ## License
 
