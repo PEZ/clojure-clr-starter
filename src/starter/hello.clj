@@ -1,5 +1,5 @@
-(ns pez.hello
-  (:require [pez.utils :as utils]))
+(ns starter.hello
+  (:require [starter.utils :as utils]))
 
 (defn hello-world []
   (println "Hello, World!"))

@@ -7,5 +7,5 @@
   :plugins [[lein-clr "0.2.0"]]
   :source-paths ["src"]
   :resource-paths ["resources"]
-  :main pez.hello
+  :main starter.hello
   :profiles {:dev {:source-paths ["dev"]}})
