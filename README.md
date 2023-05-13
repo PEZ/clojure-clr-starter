@@ -26,19 +26,14 @@ This will create and start the Docker compostion consisting of one service named
 
 ## Start the REPL and Connect your editor
 
-If you are using [Calva](https://calva.io) _and are not using Windows_, you can now start the project REPL and connect it with:
-
-1. Run the command **Calva: Start a Project REPL and Connect (a.k.a.Jack-in)**, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd> <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>j</kbd>
-2. Select the project root **clojure-clr-mini** (the *Workspace Root*)
-3. Select the project type/sequence: **ClojureCLR Starter**
-
-If you are using Calva _and Windows_: Start the REPL as per [below](#start-the-repl) and then do [Connect your editor](#connect-your-editor) using the above steps, replacing the first one with **Calva: Connect to a Running REPL in Your Project**.
+If you are using [Calva](https://calva.io), you can now start the project REPL and connect it with the command
+**Calva: Start a Project REPL and Connect (a.k.a.Jack-in)**, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd> <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>j</kbd>
 
 If you are using some other editor, please read on.
 
 ### Start the REPL
 
-From a terminal:
+From a terminal in the project root:
 
 ```sh
 docker-compose exec -it dotnet-clojure /app/docker/start-repl.sh
@@ -56,13 +51,15 @@ you can connect your editor to the REPL and hack away.
 
 ## About the Leiningen `project.clj` file
 
-It might look like this is a Leiningen project, but Leiningen is only used to download dependencies and build a classpath (CLOJURE_LOAD_PATH in ClojureCLR's case). 
+It might look like this is a Leiningen project, but Leiningen is only used to download dependencies and build a CLOJURE_LOAD_PATH (ClojureCLR's version of the classpath). 
 
-The `docker compose up` command will result in the creation of a directory `dependencies` in the root of the repository with the unpacked jar files for the dependencies identified and downloaded by Leiningen. And the directories there will be added to the load path.
+The `docker compose up` command will result in the creation of a directory `dependencies` in the root of the repository with:
+1. The unpacked jar files for the dependencies identified and downloaded by Leiningen
+1. A `loadpath.sh` file, that will be sourced by [the script](docker/start-repl.sh) starting the REPL
 
 ## WIP
 
-I know almost nothing about .Net and actually have no clue what I am doing. Expect this project to change as I figure things out a bit.
+I know almost nothing about .Net and actually have not much clue what I am doing. Expect this project to change as I figure things out a bit.
 
 ClojureCLR is also work in progress as is the nrepl server we are using here.
 
