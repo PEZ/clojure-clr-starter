@@ -29,6 +29,8 @@ This will create and start the Docker compostion consisting of one service named
 If you are using [Calva](https://calva.io), you can now start the project REPL and connect it with the command
 **Calva: Start a Project REPL and Connect (a.k.a.Jack-in)**, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd> <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>j</kbd>
 
+The REPL will keep running in the docker container, and Calva will reconnect it automatically whenever you open the project.
+
 If you are using some other editor, please read on.
 
 ### Start the REPL
@@ -36,7 +38,7 @@ If you are using some other editor, please read on.
 From a terminal in the project root:
 
 ```sh
-docker-compose exec -it dotnet-clojure /app/docker/start-repl.sh
+docker compose exec -it dotnet-clojure /app/docker/start-repl.sh
 ```
 
 ### Connect your editor
@@ -48,6 +50,17 @@ Started nREPL server at localhost:6667
 ```
 
 you can connect your editor to the REPL and hack away.
+
+## Restarting the REPL
+
+The way that the REPL is run with this setup, it will continue to run until you kill it inside the docker container (or maybe it crashes for some reason). Depending on your Docker fu, you can restart the REPL in there, or you can simply restart the container:
+
+```sh
+docker compose down
+docker compose up -d
+```
+
+Then [Start the REPL](#start-the-repl-and-connect-your-editor) again.
 
 ## About the Leiningen `project.clj` file
 
