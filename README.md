@@ -1,4 +1,4 @@
-# A Dockerized mini-project for testing ClojureCLR
+# A Dockerized CLojureCLR Starter Project
 
 Powered by [clr.tools.nrepl](https://github.com/clojure/clr.tools.nrepl)
 
@@ -24,7 +24,7 @@ If you don't ”know some Clojure”, please see: https://calva.io/get-started-w
 
 This will create and start the Docker compostion consisting of one service named `dotnet-clojure`. This is where we will start the project and its nREPL server.
 
-## Start the REPL and Connect your editor
+## Start the REPL and Connect your Editor
 
 If you are using [Calva](https://calva.io), you can now start the project REPL and connect it with the command
 **Calva: Start a Project REPL and Connect (a.k.a.Jack-in)**, <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd> <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>j</kbd>
@@ -41,7 +41,7 @@ From a terminal in the project root:
 docker compose exec -it dotnet-clojure /app/docker/start-repl.sh
 ```
 
-### Connect your editor
+### Connect your Editor
 
 When the command above prints:
 
