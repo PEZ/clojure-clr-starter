@@ -66,11 +66,13 @@ Then [Start the REPL](#start-the-repl-and-connect-your-editor) again.
 
 ## About the `deps.edn` file
 
-It might look like this is a tools.deps project, but we only use it to download dependencies and build a CLOJURE_LOAD_PATH (ClojureCLR's version of the classpath). 
+It might look like this is a tools.deps project, but we only use it to download dependencies and build a CLOJURE_LOAD_PATH (ClojureCLR's version of the classpath).
 
 The `docker compose up` command will result in the creation of a directory `dependencies` in the root of the repository with:
-1. The unpacked jar files for the dependencies identified and downloaded by `clojure`/tools.deps
+1. The unpacked jar files for the dependencies identified and downloaded by `tools.deps`
 1. A `loadpath.sh` file, that will be sourced by [the script](docker/start-repl.sh) starting the REPL
+
+Please see [How to create a really simple ClojureCLR dependency tool](https://blog.agical.se/en/posts/how-to-create-a-really-simple-clojureclr-dependency-tool/) for details and a description of how the ”tooling” of this project is set up.
 
 ## WIP
 
