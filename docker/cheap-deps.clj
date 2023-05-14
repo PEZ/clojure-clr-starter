@@ -7,7 +7,8 @@
 (require '[babashka.fs :as fs])
 
 (defn process-classpath [classpath]
-  (->> (classpath/split-classpath classpath)
+  (->> classpath 
+       classpath/split-classpath
        (map (fn [path]
               (if (clojure.string/ends-with? path ".jar")
                 (let [deps-subdir (string/replace (fs/file-name path) #".jar$" "")
