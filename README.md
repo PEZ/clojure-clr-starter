@@ -22,7 +22,7 @@ If you don't ”know some Clojure”, please see: https://calva.io/get-started-w
     docker compose up -d
     ```
 
-This will create and start the Docker compostion consisting of one service named `dotnet-clojure`. This is where we will start the project and its nREPL server.
+This will create and start the Docker composition consisting of one service named `dotnet-clojure`. This is where we will start the project and its nREPL server.
 
 ## Start the REPL and Connect your Editor
 
@@ -64,12 +64,12 @@ docker compose up -d
 
 Then [Start the REPL](#start-the-repl-and-connect-your-editor) again.
 
-## About the Leiningen `project.clj` file
+## About the `deps.edn` file
 
-It might look like this is a Leiningen project, but Leiningen is only used to download dependencies and build a CLOJURE_LOAD_PATH (ClojureCLR's version of the classpath). 
+It might look like this is a tools.deps project, but we only use it to download dependencies and build a CLOJURE_LOAD_PATH (ClojureCLR's version of the classpath). 
 
 The `docker compose up` command will result in the creation of a directory `dependencies` in the root of the repository with:
-1. The unpacked jar files for the dependencies identified and downloaded by Leiningen
+1. The unpacked jar files for the dependencies identified and downloaded by `clojure`/tools.deps
 1. A `loadpath.sh` file, that will be sourced by [the script](docker/start-repl.sh) starting the REPL
 
 ## WIP

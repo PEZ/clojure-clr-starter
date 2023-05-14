@@ -1,10 +1,17 @@
 #!/bin/bash
 
-original_classpath=$(lein classpath)
+clojure -P -A:dev
 
+original_classpath=$(clojure -Spath -A:dev)
 new_classpath=""
 IFS=":"
+
 for path in $original_classpath; do
+    if [[ $path == /root/.m2/repository/org/clojure/clojure* ]] ||
+       [[ $path == /root/.m2/repository/org/clojure/core.specs.alpha* ]] ||
+       [[ $path == /root/.m2/repository/org/clojure/spec.alpha* ]]; then
+        continue
+    fi
     if [[ $path == *.jar ]]; then
         jar_basename=$(basename "$path" .jar)
         target_dir="/app/dependencies/$jar_basename"
