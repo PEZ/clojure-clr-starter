@@ -4,6 +4,6 @@
 (defn hello-world []
   (println "Hello, World!"))
 
-(defn main [& args]
+(defn -main [& args]
   (hello-world)
   (println (utils/square 5)))
