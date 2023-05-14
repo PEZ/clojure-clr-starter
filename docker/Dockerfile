@@ -9,11 +9,11 @@ RUN apt-get update \
 # Install ClojureCLR
 RUN dotnet tool install --global --version 1.12.0-alpha7 Clojure.Main
 
-# Install Clojure CLI
-ENV CLOJURE_VERSION=1.11.1.1273
-RUN curl -O "https://download.clojure.org/install/linux-install-${CLOJURE_VERSION}.sh" \
-    && chmod +x "linux-install-${CLOJURE_VERSION}.sh" \
-    && "./linux-install-${CLOJURE_VERSION}.sh"
+# Babashka give us tools.deps power
+RUN curl -sLO https://raw.githubusercontent.com/babashka/babashka/master/install \
+    && chmod +x install \
+    && ./install
+
 ENV PATH="${PATH}:/root/.dotnet/tools"
 
 # The entrypoint runs our deps el cheapo script
