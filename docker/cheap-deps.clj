@@ -17,7 +17,7 @@
                   (fs/unzip path deps-dir {:replace-existing true})
                   deps-dir)
                 path)))
-       (string/join ":")))
+       (string/join fs/path-separator)))
 
 (when (= *file* (System/getProperty "babashka.file"))
   (deps/add-deps (edn/read-string (slurp "deps.edn")) {:aliases [:dev]})
