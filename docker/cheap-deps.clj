@@ -6,7 +6,7 @@
 (require '[babashka.classpath :as classpath])
 (require '[babashka.fs :as fs])
 
-(defn process-classpath [classpath]
+(defn process-jar-deps! [classpath]
   (->> classpath 
        classpath/split-classpath
        (map (fn [path]
@@ -22,5 +22,5 @@
 (when (= *file* (System/getProperty "babashka.file"))
   (deps/add-deps (edn/read-string (slurp "deps.edn")) {:aliases [:dev]})
   (-> (classpath/get-classpath)
-      process-classpath
+      process-jar-deps!
       println))
