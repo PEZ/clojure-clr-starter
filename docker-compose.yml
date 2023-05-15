@@ -8,7 +8,6 @@ services:
     working_dir: /app
     ports:
       - "6667:1667"
-    command: tail -f /dev/null
 
 networks:
   default:
