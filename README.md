@@ -82,7 +82,7 @@ ClojureCLR is also work in progress as is the nrepl server we are using here.
 
 ## Quirks
 
-A known issue is that the `docker/.nrepl-port` file is not deleted when the Docker container is killed. I don't know why, yet. Delete it manually, until the issue has been solved.
+When using Calva Jack-in (letting Calva start the project and connect), the REPL process keeps running in the container even when the Jack-in is killed from Calva. Jacking in again from this state will fail. You can reconnect to the REPL with the Calva Connect command instead. To kill the REPL, do someting like: `docker compose down && docker compose up`.
 
 ## License
 
