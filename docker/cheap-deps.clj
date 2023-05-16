@@ -5,6 +5,7 @@
 (require '[babashka.deps :as deps])
 (require '[babashka.classpath :as classpath])
 (require '[babashka.fs :as fs])
+(require '[babashka.cli :as cli])
 
 (defn process-jar-deps! [classpath]
   (->> classpath 
@@ -20,7 +21,10 @@
        (string/join fs/path-separator)))
 
 (when (= *file* (System/getProperty "babashka.file"))
-  (deps/add-deps (edn/read-string (slurp "deps.edn")) {:aliases [:dev]})
-  (-> (classpath/get-classpath)
-      process-jar-deps!
-      println))
+  (let [aliases (:alias (cli/parse-opts *command-line-args* {:spec {:alias {:alias :a
+                                                                            :default [:dev]
+                                                                            :coerce [:keyword]}}}))]
+    (deps/add-deps (edn/read-string (slurp "deps.edn")) {:aliases aliases})
+    (-> (classpath/get-classpath)
+        process-jar-deps!
+        println)))
