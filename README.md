@@ -64,6 +64,20 @@ docker compose up -d
 
 Then [Start the REPL](#start-the-repl-and-connect-your-editor) again.
 
+## Running the example app
+
+If you want to run the example app from the command line, without involving a REPL, you can do so by calling `Clojure.Main -m starter.hello`. You will need to populate the `CLOJURE_LOAD_PATH`. 
+
+```sh
+$ docker-compose exec -e CLOJURE_LOAD_PATH=src dotnet-clojure Clojure.Main -m starter.hello
+```
+
+If you have .Net and ClojureCLR installed, you can run it without involving Docker. E.g. on a Windows box:
+
+```ps
+$Env:CLOJURE_LOAD_PATH='src'; Clojure.Main -m starter.hello
+```
+
 ## About the `deps.edn` file
 
 It might look like this is a tools.deps project, but we only use it to download dependencies and build a CLOJURE_LOAD_PATH (ClojureCLR's version of the classpath).
